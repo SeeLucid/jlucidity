@@ -1,0 +1,1 @@
+$(BIN)/jlucidity/source/bytecode/BytecodeClassInfo.class:		$(SRC)/jlucidity/source/bytecode/BytecodeClassInfo.java $(BIN)/jlucidity/info/ClassInfo.class $(BIN)/jlucidity/info/VerifiableClassInfo.class
