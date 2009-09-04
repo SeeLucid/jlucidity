@@ -28,6 +28,7 @@ import java.util.jar.*;
 public class JarClassSource implements ClassSource
 {
 	private Map<ClassName,JarClassInfo> classes;
+	private Set<PackageName> packages;
 	private JarFile jar;
 	private File file;
 
@@ -129,8 +130,9 @@ public class JarClassSource implements ClassSource
 		try{
 			this.jar=new JarFile(this.file);
 		}catch(IOException e) {
-			throw new UnsupportedOperationException("Can not open jar file: "+file, e);
+			throw new UnsupportedOperationException("Can not open JAR file: "+file, e);
 		}
+
 		boolean reinst=false;
 		try{
 			classes.clear();
@@ -139,6 +141,7 @@ public class JarClassSource implements ClassSource
 		}
 		if(reinst || !classes.isEmpty())
 			classes=null;
+
 		mapped=false;
 		map();
 	}
@@ -154,8 +157,9 @@ public class JarClassSource implements ClassSource
 			JarEntry jentry=en.nextElement();
 			if(!jentry.isDirectory() && jentry.getName().endsWith(".class"))
 			{
-				classes.put(new JarClassName(jentry),null);
-				/* TODO add to package set */
+				JarClassName jclazz=new JarClassName(jentry);
+				classes.put(jclazz,null);
+				packages.add(jclazz.getPackageName());
 			}
 		}
 		mapped=true;

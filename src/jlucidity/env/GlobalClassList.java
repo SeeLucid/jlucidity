@@ -16,7 +16,7 @@ import java.util.HashMap;
  * Keep track of all the class information from multiple class
  * sources.
  */
-public class ClassList
+public class GlobalClassList
 {
 	private static Set<ClassSource> sources;
 	/*private static Set<ClassName> classes;*/

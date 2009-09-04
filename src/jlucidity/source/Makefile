@@ -1,7 +1,8 @@
 $$($(SRC)/jlucidity/source/ClassSource.java_DEPS):=	$(SRC)/jlucidity/source/ClassSource.java $(BIN)/jlucidity/info/ClassName.class $(BIN)/jlucidity/info/PackageName.class
 $$($(SRC)/jlucidity/source/SourceProduct.java_DEPS):=	$(SRC)/jlucidity/source/SourceProduct.java $(BIN)/jlucidity/source/ClassSource.class
 
-SOURCECIRCDEPTGTS:=			$(SRC)/jlucidity/source/ClassSource.java $(SRC)/jlucidity/info/ClassInfo.java $(SRC)/jlucidity/source/SourceProduct.java $($(SRC)/jlucidity/source/ClassSource.java_DEPS)
+SOURCECIRCDEPTGTS:=			$(SRC)/jlucidity/source/ClassSource.java $(SRC)/jlucidity/info/ClassInfo.java \
+	$(SRC)/jlucidity/source/SourceProduct.java $($(SRC)/jlucidity/source/ClassSource.java_DEPS)
 ##CLASS_FILES:= $(subst $(SRC),$(BIN),$(patsubst %.java,%.class,$(wildcard $(SRC)/*.java)))
 #$(BIN)/SOURCECIRCDEP:	$(SOURCECIRCDEPTGTS) $($(SRC)/jlucidity/source/ClassSource.java_DEPS) \
 #                                $($(SRC)/jlucidity/info/ClassInfo.java_DEPS)  $($(SRC)/jlucidity/source/SourceProduct.java_DEPS)

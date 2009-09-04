@@ -1,4 +1,4 @@
-# Makefile for Java completion
+# Makefile for JLucidity
 include Config.mk
 
 gendirs:= $(BIN) $(CFG)
