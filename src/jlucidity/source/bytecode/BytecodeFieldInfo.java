@@ -21,7 +21,7 @@ public class BytecodeFieldInfo extends FieldInfo
 
 	public String getFieldDeclaration()
 	{
-		return null;
+		return finfo.getDescriptor(source.getClassReader().getConstantPool()) + finfo.getName(source.getClassReader().getConstantPool());
 	}
 
 	public String toGenericString()

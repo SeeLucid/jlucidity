@@ -34,7 +34,7 @@ public class BytecodeClassInfo extends ClassInfo implements VerifiableClassInfo
 	/* TODO */
 	public boolean verify(ClassName name)
 	{
-		return this.name.equals(name);
+		return getClassName().equals(name);
 	}
 
 	/* TODO */
