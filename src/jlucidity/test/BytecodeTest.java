@@ -75,8 +75,8 @@ class SourceFactory
 	static ClassSource getSource(String path)
 	{
 		try{
-		if(isJar(path))
-			return new JarClassSource(path);
+			if(isJar(path))
+				return new JarClassSource(path);
 		} catch(Exception e)
 		{
 			return null;
