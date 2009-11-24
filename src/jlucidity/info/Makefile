@@ -10,7 +10,7 @@ $(BIN)/jlucidity/info/ClassInfo.class:			$(CFG)/SOURCECIRCDEP
 #                                                        $(BIN)/jlucidity/info/ConstructorInfo.class | $(CFG)/SOURCECIRCDEP
 $(BIN)/jlucidity/info/PackageInfo.class:		$(SRC)/jlucidity/info/PackageInfo.java $(BIN)/jlucidity/info/TypeInfo.class $(BIN)/jlucidity/source/ClassSource.class
 $(BIN)/jlucidity/info/ConstructorInfo.class:		$(SRC)/jlucidity/info/ConstructorInfo.java $(BIN)/jlucidity/info/TypeInfo.class
-$(BIN)/jlucidity/info/MethodInfo.class:		$(SRC)/jlucidity/info/MethodInfo.java $(BIN)/jlucidity/info/TypeInfo.class
+$(BIN)/jlucidity/info/MethodInfo.class:		$(SRC)/jlucidity/info/MethodInfo.java $(BIN)/jlucidity/info/FieldInfo.class  $(BIN)/jlucidity/info/TypeInfo.class 
 $(BIN)/jlucidity/info/FieldInfo.class:			$(SRC)/jlucidity/info/FieldInfo.java $(BIN)/jlucidity/info/TypeInfo.class
 
 $(BIN)/jlucidity/info/ClassName.class:			$(SRC)/jlucidity/info/ClassName.java	$(BIN)/jlucidity/info/PackageName.class
