@@ -18,4 +18,9 @@ package jlucidity.info;
  */
 public abstract class PrimitiveInfo extends TypeInfo
 {
+	/* TODO */
+	/*public static Map<String,String> getInfoTypes()
+	{
+		return infoTypes;
+	}*/
 }

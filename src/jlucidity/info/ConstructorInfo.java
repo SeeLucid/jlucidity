@@ -7,5 +7,11 @@ package jlucidity.info;
  */
 public abstract class ConstructorInfo extends TypeInfo
 {
+	/* TODO */
+	/*public static Map<String,String> getInfoTypes()
+	{
+		return infoTypes;
+	}*/
+
 	public abstract String getContructorSignature();
 }

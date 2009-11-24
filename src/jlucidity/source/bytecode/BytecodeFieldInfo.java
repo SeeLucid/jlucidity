@@ -6,11 +6,13 @@ import jlucidity.bytecode.*;
 public class BytecodeFieldInfo extends FieldInfo
 {
 	private BytecodeClassSource source;
+	private BytecodeClassInfo info;
 	private BCFieldInfo finfo;
 
-	public BytecodeFieldInfo(BytecodeClassSource source, BCFieldInfo finfo)
+	public BytecodeFieldInfo(BytecodeClassSource source, BytecodeClassInfo info, BCFieldInfo finfo)
 	{
 		this.source=source;
+		this.info=info;
 		this.finfo=finfo;
 	}
 
@@ -21,7 +23,7 @@ public class BytecodeFieldInfo extends FieldInfo
 
 	public String getFieldDeclaration()
 	{
-		return finfo.getDescriptor(source.getClassReader().getConstantPool()) + finfo.getName(source.getClassReader().getConstantPool());
+		return finfo.getDescriptor(info.getClassReader().getConstantPool()) + finfo.getName(info.getClassReader().getConstantPool());
 	}
 
 	public String toGenericString()

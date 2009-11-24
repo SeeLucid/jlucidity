@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public abstract class MethodInfo extends TypeInfo
 {
-	private static Map<String,String> infoTypes;
+	private final static Map<String,String> infoTypes;
 
 	static {
 		infoTypes=new HashMap<String,String>();
@@ -18,6 +18,10 @@ public abstract class MethodInfo extends TypeInfo
 		infoTypes.put("Method signature","Signature of the method (access, return type, name, arguments).");
 	}
 
+	public static Map<String,String> getInfoTypes()
+	{
+		return infoTypes;
+	}
 
 	public abstract String getMethodSignature();
 

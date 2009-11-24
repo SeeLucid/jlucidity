@@ -12,7 +12,7 @@ import java.util.Set;
  */
 public abstract class TypeInfo
 {
-	private static Map<String,String> infoTypes;
+	private final static Map<String,String> infoTypes;
 
 	static {
 		infoTypes=new HashMap<String,String>();

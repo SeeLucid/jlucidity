@@ -12,17 +12,17 @@ import java.util.HashMap;
  */
 public abstract class PackageInfo extends TypeInfo implements SourceProduct
 {
-	private static Map<String,String> infoTypes;
+	private final static Map<String,String> infoTypes;
+
+	public static Map<String,String> getInfoTypes()
+	{
+		return infoTypes;
+	}
 
 	static {
 		infoTypes=new HashMap<String,String>();
 		infoTypes.putAll(TypeInfo.getInfoTypes());
 		infoTypes.put("Package name","The name of the package.");
-	}
-
-	public static Map<String,String> getInfoTypes()
-	{
-		return infoTypes;
 	}
 
 	public Object getInfo(String infoType)
@@ -34,7 +34,4 @@ public abstract class PackageInfo extends TypeInfo implements SourceProduct
 	}
 
 	public abstract PackageName getPackageName();
-
-	//TODO
-	//public abstract Set<ClassName> getClasses();
 }

@@ -13,7 +13,7 @@ import java.util.HashMap;
  */
 public abstract class ClassInfo extends TypeInfo implements SourceProduct
 {
-	private static Map<String,String> infoTypes;
+	private final static Map<String,String> infoTypes;
 	protected ClassSource source;
 
 	static {
@@ -25,6 +25,11 @@ public abstract class ClassInfo extends TypeInfo implements SourceProduct
 		infoTypes.put("Constructors","The constructors available to this class.");
 	}
 
+	public static Map<String,String> getInfoTypes()
+	{
+		return infoTypes;
+	}
+
 	public ClassInfo(ClassSource source)
 	{
 		this.source=source;
@@ -33,11 +38,6 @@ public abstract class ClassInfo extends TypeInfo implements SourceProduct
 	public ClassSource getSource()
 	{
 		return source;
-	}
-
-	public static Map<String,String> getInfoTypes()
-	{
-		return infoTypes;
 	}
 
 	public Object getInfo(String infoType)
