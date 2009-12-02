@@ -8,12 +8,16 @@ package jlucidity.info;
 public abstract class FieldInfo extends TypeInfo
 {
 	/* TODO */
-	/*public static Map<String,String> getInfoTypes()
+	public static Map<String,String> getInfoTypes()
 	{
 		return infoTypes;
-	}*/
+	}
 
 	public abstract String getFieldDeclaration();
+
+	public abstract String getName();
+
+	public abstract String getDescriptor();
 
 	public static class FieldDescriptor
 	{
