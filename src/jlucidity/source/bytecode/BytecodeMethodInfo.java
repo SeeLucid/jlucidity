@@ -8,12 +8,13 @@ public class BytecodeMethodInfo extends MethodInfo
 	private BytecodeClassInfo info;
 	private BCMethodInfo finfo;
 
-	public BytecodeMethodInfo(BytecodeClassSource source, BytecodeClassInfo info, BCFieldInfo finfo)
+	public BytecodeMethodInfo(BytecodeClassSource source, BytecodeClassInfo info, BCFieldInfo minfo)
 	{
 		this.source=source;
 		this.info=info;
-		this.finfo=finfo;
+		this.minfo=minfo;
 	}
+
 	public int getModifiers()
 	{
 		return -1;
