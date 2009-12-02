@@ -18,6 +18,21 @@ public class BCMethodInfo
 	private BCAttributeInfo attributes[];
 	/************************************************/
 
+	public int getAccessFlags()
+	{
+		return access_flags;
+	}
+
+	public String getName(ConstantInfo pool[])
+	{
+		return ((CIUtf8)ConstantPoolReader.getIndex(pool,name_index)).toString();
+	}
+
+	public String getDescriptor(ConstantInfo pool[])
+	{
+		return ((CIUtf8)ConstantPoolReader.getIndex(pool,descriptor_index)).toString();
+	}
+
 	public static BCMethodInfo getMethod(DataInputStream d) {
 		BCMethodInfo c=new BCMethodInfo();
 		try{c.readMethod(d);} catch(IOException e){e.printStackTrace();}

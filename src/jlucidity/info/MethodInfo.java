@@ -23,6 +23,10 @@ public abstract class MethodInfo extends TypeInfo
 		return infoTypes;
 	}
 
+	public abstract String getName();
+
+	public abstract String getDescriptor();
+
 	public abstract String getMethodSignature();
 
 	public static class MethodDescriptor

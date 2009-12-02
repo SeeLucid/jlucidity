@@ -26,11 +26,24 @@ public class ReflectionFieldInfo extends FieldInfo
 		return field.toString();
 	}
 
+	/* TODO */
+	public String getDescriptor()
+	{
+		return "";
+	}
+
+	/* TODO */
+	public String getName()
+	{
+		return "";
+	}
+
 	public int getModifiers()
 	{
 		return field.getModifiers();
 	}
 
+	/* TODO */
 	public String toGenericString()
 	{
 		return "";

@@ -1,30 +1,41 @@
 package jlucidity.source.bytecode;
 
 import jlucidity.info.MethodInfo;
+import jlucidity.bytecode.*;
 
 public class BytecodeMethodInfo extends MethodInfo
 {
-	private BytecodeClassSource source;
 	private BytecodeClassInfo info;
-	private BCMethodInfo finfo;
+	private BCMethodInfo minfo;
 
-	public BytecodeMethodInfo(BytecodeClassSource source, BytecodeClassInfo info, BCFieldInfo minfo)
+	public BytecodeMethodInfo(BytecodeClassInfo info, BCMethodInfo minfo)
 	{
-		this.source=source;
 		this.info=info;
 		this.minfo=minfo;
 	}
 
 	public int getModifiers()
 	{
-		return -1;
+		return minfo.getAccessFlags();
 	}
 
+	public String getName()
+	{
+		return minfo.getDescriptor(info.getClassReader().getConstantPool());
+	}
+
+	public String getDescriptor()
+	{
+		return minfo.getDescriptor(info.getClassReader().getConstantPool());
+	}
+
+	/* TODO */
 	public String toGenericString()
 	{
 		return null;
 	}
 
+	/* TODO */
 	public String getMethodSignature()
 	{
 		return null;

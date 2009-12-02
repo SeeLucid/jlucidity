@@ -31,6 +31,12 @@ public class ReflectionMethodInfo extends MethodInfo
 		return method.getModifiers();
 	}
 
+	/* TODO */
+	public String getName() {return "";}
+
+	/* TODO */
+	public String getDescriptor() {return "";}
+
 	public String toGenericString()
 	{
 		return method.toGenericString();
