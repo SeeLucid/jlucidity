@@ -13,3 +13,4 @@ include $(SRC)/jlucidity/source/Makefile
 include $(SRC)/jlucidity/env/Makefile
 include $(SRC)/jlucidity/filter/Makefile
 include $(SRC)/jlucidity/bytecode/Makefile
+include $(SRC)/jlucidity/test/Makefile
