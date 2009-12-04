@@ -5,6 +5,7 @@ import jlucidity.source.*;
 import jlucidity.info.*;
 
 import java.util.Set;
+import java.util.HashSet;
 import java.io.InputStream;
 import java.io.IOException;
 
@@ -17,6 +18,9 @@ public class BytecodeClassInfo extends ClassInfo implements VerifiableClassInfo
 {
 	private ClassReader creader;
 	private ClassName name;
+	private Set<FieldInfo> fields;
+	private Set<MethodInfo> methods;
+	private Set<ConstructorInfo> constructors;
 
 	/**
 	 * @param in	bytecode data
@@ -50,28 +54,47 @@ public class BytecodeClassInfo extends ClassInfo implements VerifiableClassInfo
 		return creader;
 	}
 
-	/* TODO */
 	public Set<FieldInfo> getFields()
 	{
-		/*BytecodeFieldInfo*/
-		return null;
+		if(fields == null)
+			retrieveFields();
+		return fields;
 	}
 
-	/* TODO */
 	public Set<MethodInfo> getMethods()
 	{
-		/*BytecodeMethodInfo*/
-		return null;
+		if(methods == null)
+			retrieveMethods();
+		return methods;
 	}
 
-	/* TODO */
 	public Set<ConstructorInfo> getContructors()
 	{
-		/*BytecodeConstructorInfo*/
-		return null;
+		if(constructors == null)
+			retrieveMethods();
+		return constructors;
 	}
 
-	/* TODO */
+	private void retrieveFields()
+	{
+		fields = new HashSet<FieldInfo>();
+		BCFieldInfo[] bfield = creader.getFields();
+		for(BCFieldInfo f : bfield)
+			fields.add(new BytecodeFieldInfo(this,f));
+	}
+
+	private void retrieveMethods()
+	{
+		methods = new HashSet<MethodInfo>();
+		constructors = new HashSet<ConstructorInfo>();
+		BCMethodInfo[] bmeth = creader.getMethods();
+		for(BCMethodInfo m : bmeth)
+			if(m.getName(creader.getConstantPool()).equals("<init>"))
+				constructors.add(new BytecodeConstructorInfo(this,m));
+			else
+				methods.add(new BytecodeMethodInfo(this,m));
+	}
+
 	public int getModifiers()
 	{
 		return creader.getAccessFlags();
